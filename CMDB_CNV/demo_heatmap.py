@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 
 
-def demo_heatmap(adata, cell_type_ann = 'cell_type', cell_type = str, chromosome_ann = 'chromosome', chromosome = str, cnv_ann = str,layers='counts'):
+def heatmap(adata, cell_type_ann = 'cell_type', cell_type = str, chromosome_ann = 'chromosome', chromosome = str, cnv_ann = str,layers='counts'):
     # format match for chromosome index, some are int, some are like chr[int]
     if chromosome == 'X':
         chromosome = '23'

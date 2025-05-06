@@ -69,6 +69,12 @@ Simulate a copy number alteration (CNA) in a specific genomic region for a fract
   - `.obs`: Cell metadata including `cell_type`
   - `.var`: Gene metadata including `chromosome`, `start`, and `end` coordinates
 
+
+
+------
+
+
+
 ### 🔹 `mean_norm(adata)`
 
 Apply global and cell-type-specific mean normalization. Results are stored in various `adata.layers`.
@@ -97,6 +103,12 @@ Apply global and cell-type-specific mean normalization. Results are stored in va
   - `.layers['log norm']`: Globally mean-centered log-transformed expression
   - `.layers['ctype log norm']`: Cell-type mean-centered expression
 
+
+
+------
+
+
+
 ### 🔹 `mean_std_norm(adata)`
 
 Performs z-score normalization of gene expression by subtracting the mean and dividing by the standard deviation across all cells for each gene. This method standardizes the expression distribution, making genes comparable regardless of their absolute expression levels.
@@ -124,6 +136,12 @@ Performs z-score normalization of gene expression by subtracting the mean and di
 - `AnnData` object (`anndata.AnnData`):
    Modified `adata` with an added layer:
   - `.layers['zscore']`: Z-score normalized expression matrix (cells × genes)
+  
+    
+
+------
+
+
 
 ### 🔹 `pre_processing(adata)`
 
@@ -156,6 +174,12 @@ Clean and format AnnData object for CNV analysis.
   - Added `.var['gene_order']` field indicating gene positions along chromosomes.
   - Cleaned gene set for accurate CNV visualization and computation.
 
+
+
+------
+
+
+
 ### 🔹 `neighborhood(adata, target_gene, window)`
 
 Retrieve genes in a genomic window around a target gene to explore CNV neighborhoods. This is useful for visualizing and analyzing local CNV effects across contiguous gene regions.
@@ -184,41 +208,49 @@ Retrieve genes in a genomic window around a target gene to explore CNV neighborh
 - The function automatically handles edge cases (e.g., if the target gene is near the start or end of a chromosome).
 - Make sure `CNV.pre_processing` has been applied to the dataset before using this function.
 
+
+
+------
+
+
+
 ### 🔹 `heatmap(adata, cell_type='all', layer='ctype log norm')`
 
-Generates a heatmap of gene expression across chromosomes for a specified cell type or for all cells. The heatmap is useful for visualizing potential CNV patterns as blocks of increased or decreased expression levels across genomic regions.
+Draws a side-by-side heatmap comparing multiple cell types to demonstrate differences in expression patterns across chromosomes. This is useful for visually identifying potential CNV regions specific to certain cell types.
 
 **Parameters:**
 
 - `adata` (*anndata.AnnData*):
-   The input AnnData object. It must have:
+   The input AnnData object. It must include:
   - `.obs['cell_type']`: Cell type annotations
   - `.var['chromosome']` and `.var['gene_order']`: Genomic information
   - A valid expression `layer` (e.g., `'ctype log norm'`)
-- `cell_type` (*str*, default=`'all'`):
-   Specify a cell type to filter the heatmap. If `'all'`, includes all cells.
 - `layer` (*str*, default=`'ctype log norm'`):
-   Name of the `adata.layers` matrix to visualize. This should be a normalized expression matrix.
-- `figsize` (*tuple*, default=`(12, 6)`):
-   Size of the heatmap figure (width, height).
+   Expression layer to visualize. Must exist in `adata.layers`.
+- `cell_types` (*List[str]*, optional):
+   List of specific cell types to include. If `None`, uses all unique cell types in `adata.obs['cell_type']`.
+- `figsize` (*tuple*, default=`(14, 6)`):
+   Size of the entire figure (width, height). Each heatmap will be adjusted within this space.
 - `cmap` (*str*, default=`'RdBu_r'`):
-   Matplotlib color map to use for heatmap intensity (e.g., red for amplification, blue for deletion).
-
-------
+   Color map for the heatmaps (e.g., red = amplification, blue = deletion).
 
 **Returns:**
 
 - `None`
    A heatmap plot is shown directly using `matplotlib.pyplot`.
 
-------
-
 **Notes:**
 
-- Chromosomes are shown in genomic order based on `gene_order`.
-- Recommended input layer: `'ctype log norm'`, produced by `CNV.mean_norm`.
+- Make sure to run `CNV.pre_processing` and `CNV.mean_norm` beforehand.
+- This function is ideal for quick visual comparison of potential CNVs between cell populations.
 
-### 🔹 `scatter_pl(...)`
+
+
+------
+
+
+
+### 🔹 `scatter_pl(adata)`
 
 Creates a scatter plot showing the expression of a specific gene across different cell types. This visualization helps detect potential CNV signals, such as consistent over- or under-expression of a gene in specific cell populations.
 
@@ -237,14 +269,12 @@ Creates a scatter plot showing the expression of a specific gene across differen
 - `jitter` (*float*, default=`0.25`):
    Amount of horizontal jitter to apply to points to avoid overlap.
 
-------
-
 **Returns:**
 
 - `None`
    A scatter plot is displayed directly using `matplotlib.pyplot`.
 
-------
+
 
 **Notes:**
 

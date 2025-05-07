@@ -25,6 +25,7 @@ adata = sc.read_h5ad('your h5ad file')
 adata = CNV.simulate()                
 adata = CNV.pre_processing           
 adata = CNV.mean_norm(adata)
+adata = CNV.mean_norm_std(adata)
 adata = CNV.neighborhood(adata)
 CNV.heatmap(adata)  
 CNV.scatter_pl(adata)    
@@ -102,6 +103,35 @@ Apply global and cell-type-specific mean normalization. Results are stored in va
 
 ------
 
+### 🔹 `mean_norm_std(adata)`
+
+Apply global and cell-type-specific mean normalization with ± 3 standard deviation. Results are stored in various `adata.layers`.
+
+**Normalization Strategies:**
+
+1. **Global Mean Normalization (`adata.layers['log norm']`)**
+   - Log-transforms the expression matrix: `log1p(expression)`
+   - Subtracts the mean expression of each gene across all cells.
+2. **Cell-Type Mean Normalization (`adata.layers['ctype log norm']`)**
+   - Groups cells by `cell_type`.
+   - Computes and subtracts gene-wise mean expression within each cell type.
+   - Preserves expression variability within cell types while accounting for baseline differences.
+
+**Parameters:**
+
+- `adata` (*anndata.AnnData*):
+   The input AnnData object. It must contain:
+  - `.X`: Gene expression matrix (cells × genes)
+  - `.obs['cell_type']`: Cell type annotations
+
+**Returns:**
+
+- `AnnData` object (`anndata.AnnData`):
+   Modified `adata` with added layers:
+  - `.layers['log norm']`: Globally mean-centered log-transformed expression
+  - `.layers['ctype log norm']`: Cell-type mean-centered expression
+
+------
 
 
 ### 🔹 `pre_processing(adata)`

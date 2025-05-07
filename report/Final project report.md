@@ -80,13 +80,13 @@ CNV.scatter_pl(ad_CNV)
 
 #### 📊Output
 
-![pbmc_CD14 monocyte_chr6_scatter](figure%20for%20report/Task2A/CMDB_CNV/pbmc_CD14%20monocyte%20chr22%20scatter.png)
 
-![pbmc_CD14 monocyte_chr6_scatter](figure for report/Task2A/CMDB_CNV/pbmc_CD14 monocyte_chr6_scatter.png)
+![pbmc_CD14 monocyte_chr6_scatter](figure%20for%20report/Task2A/CMDB_CNV/pbmc_CD14%20monocyte_chr6_scatter.png)
 
-![pbmc_CD14 monocyte_chr22_scatter](figure for report/Task2A/CMDB_CNV/pbmc_CD14 monocyte_chr22_scatter.png)
+![pbmc_CD14 monocyte_chr22_scatter](figure%20for%20report/Task2A/CMDB_CNV/pbmc_CD14%20monocyte_chr22_scatter.png)
 
-![pbmc_CD14 monocyte_chr23_scatter](figure for report/Task2A/CMDB_CNV/pbmc_CD14 monocyte_chr23_scatter.png)
+![pbmc_CD14 monocyte_chr23_scatter](figure%20for%20report/Task2A/CMDB_CNV/pbmc_CD14%20monocyte_chr23_scatter.png)
+
 
 ### Part 2: Explor the impact of read depth
 
@@ -156,31 +156,30 @@ CNV.heatmap(adBMNorm_2000)
 
 - 500 reads per cell: 
 
+![c500_CD14 monocyte_chr6_scatter](figure%20for%20report/Task2A/CMDB_CNV/c500_CD14%20monocyte_chr6_scatter.png)
+
+![c500_CD14 monocyte_chr22_scatter](figure%20for%20report/Task2A/CMDB_CNV/c500_CD14%20monocyte_chr22_scatter.png)
+
+![c500_CD14 monocyte_chr23_scatter](figure%20for%20report/Task2A/CMDB_CNV/c500_CD14%20monocyte_chr23_scatter.png)
+
+
+- 1000 reads per cell:
   
-  
-  ![c500_CD14 monocyte_chr6_scatter](figure for report/Task2A/CMDB_CNV/c500_CD14 monocyte_chr6_scatter.png)
+![c1000_CD14 monocyte_chr6_scatter](figure%20for%20report/Task2A/CMDB_CNV/c1000_CD14%20monocyte_chr6_scatter.png)
 
+![c1000_CD14 monocyte_chr22_scatter](figure%20for%20report/Task2A/CMDB_CNV/c1000_CD14%20monocyte_chr22_scatter.png)
 
+![c1000_CD14 monocyte_chr23_scatter](figure%20for%20report/Task2A/CMDB_CNV/c1000_CD14%20monocyte_chr23_scatter.png)
 
-![c500_CD14 monocyte_chr22_scatter](figure for report/Task2A/CMDB_CNV/c500_CD14 monocyte_chr22_scatter.png)
-
-
-
-![c500_CD14 monocyte_chr23_scatter](figure for report/Task2A/CMDB_CNV/c500_CD14 monocyte_chr23_scatter.png)
-
-- 1000 reads per cell: ![c1000_CD14 monocyte_chr6_scatter](figure for report/Task2A/CMDB_CNV/c1000_CD14 monocyte_chr6_scatter.png)
-
-  ![c1000_CD14 monocyte_chr22_scatter](figure for report/Task2A/CMDB_CNV/c1000_CD14 monocyte_chr22_scatter.png)
-
-  ![c1000_CD14 monocyte_chr23_scatter](figure for report/Task2A/CMDB_CNV/c1000_CD14 monocyte_chr23_scatter.png)
 
 - 2000 reads per cell: 
 
-  ![c2000_CD14 monocyte_chr6_scatter](figure for report/Task2A/CMDB_CNV/c2000_CD14 monocyte_chr6_scatter.png)
+![c2000_CD14 monocyte_chr6_scatter](figure%20for%20report/Task2A/CMDB_CNV/c2000_CD14%20monocyte_chr6_scatter.png)
 
-  ![c2000_CD14 monocyte_chr22_scatter](figure for report/Task2A/CMDB_CNV/c2000_CD14 monocyte_chr22_scatter.png)
+![c2000_CD14 monocyte_chr22_scatter](figure%20for%20report/Task2A/CMDB_CNV/c2000_CD14%20monocyte_chr22_scatter.png)
 
-  ![c2000_CD14 monocyte_chr23_scatter](figure for report/Task2A/CMDB_CNV/c2000_CD14 monocyte_chr23_scatter.png)
+![c2000_CD14 monocyte_chr23_scatter](figure%20for%20report/Task2A/CMDB_CNV/c2000_CD14%20monocyte_chr23_scatter.png)
+
 
 #### 3. Analyzing low-depth datasets with inferCNVs
 
@@ -214,21 +213,26 @@ cnv.pl.chromosome_heatmap(adBMNorm_2000, groupby=['simulated_cnvs'])
 
 ##### 📊Output
 
-- adBMNorm500
+- 500 reads per cell
 
-![c2000_CD14 monocyte_chr6_scatter](figure for report/Task2A/inferCNV/500_infer1.jpg)
+![c2000_CD14 monocyte_chr6_scatter](figure%20for%20report/Task2A/inferCNV/500_infer1.jpg)
 
-![c2000_CD14 monocyte_chr6_scatter](figure for report/Task2A/inferCNV/500_infer2.jpg)
+![c2000_CD14 monocyte_chr6_scatter](figure%20for%20report/Task2A/inferCNV/500_infer2.jpg)
 
-- adBMNorm1000
 
-  ![c2000_CD14 monocyte_chr6_scatter](figure for report/Task2A/inferCNV/1000_infer1.jpg)![c2000_CD14 monocyte_chr6_scatter](figure for report/Task2A/inferCNV/1000_infer2.jpg)
+- 1000 reads per cell
 
-- adBMNorm2000
+![c2000_CD14 monocyte_chr6_scatter](figure%20for%20report/Task2A/inferCNV/1000_infer1.jpg)
 
-- ![c2000_CD14 monocyte_chr6_scatter](figure for report/Task2A/inferCNV/2000_infer1.jpg)
+![c2000_CD14 monocyte_chr6_scatter](figure%20for%20report/Task2A/inferCNV/1000_infer2.jpg)
 
-- ![c2000_CD14 monocyte_chr6_scatter](figure for report/Task2A/inferCNV/2000_infer2.jpg)
+
+- 2000 reads per cell
+
+  ![c2000_CD14 monocyte_chr6_scatter](figure%20for%20report/Task2A/inferCNV/2000_infer1.jpg)
+
+  ![c2000_CD14 monocyte_chr6_scatter](figure%20for%20report/Task2A/inferCNV/2000_infer2.jpg)
+
 
 ## ⭐️ Task 2B: Augment assessment with better gold standard data
 
@@ -365,27 +369,30 @@ The output here are scatter plots for the chromosom with CNVs in the corelated c
 
 ##### 1: Detecting CNVs with low frequency and different size 
 
-![lowlow_B cell_chr7_scatter](figure for report/Task2B/CMDB_CNV/low_B cell_chr7_scatter.png)
+![lowlow_B cell_chr7_scatter](figure%20for%20report/Task2B/CMDB_CNV/low_B%20cell_chr7_scatter.png)
 
-![low_CD4 T cell_chr1_scatter](figure for report/Task2B/CMDB_CNV/low_CD4 T cell_chr1_scatter.png)
+![low_CD4 T cell_chr1_scatter](figure%20for%20report/Task2B/CMDB_CNV/low_CD4%20T%20cell_chr1_scatter.png)
 
-![low_CD14 monocyte_chr23_scatter](figure for report/Task2B/CMDB_CNV/low_CD14 monocyte_chr23_scatter.png)
+![low_CD14 monocyte_chr23_scatter](figure%20for%20report/Task2B/CMDB_CNV/low_CD14%20monocyte_chr23_scatter.png)
+
 
 ##### 2: Detecting CNVs with medium frequency and different size 
 
-![med_B cell_chr8_scatter](figure for report/Task2B/CMDB_CNV/med_B cell_chr8_scatter.png)
+![med_B cell_chr8_scatter](figure%20for%20report/Task2B/CMDB_CNV/med_B%20cell_chr8_scatter.png)
 
-![med_CD4 T cell_chr13_scatter](figure for report/Task2B/CMDB_CNV/med_CD4 T cell_chr13_scatter.png)
+![med_CD4 T cell_chr13_scatter](figure%20for%20report/Task2B/CMDB_CNV/med_CD4%20T%20cell_chr13_scatter.png)
 
-![med_CD14 monocyte_chr16_scatter](figure for report/Task2B/CMDB_CNV/med_CD14 monocyte_chr16_scatter.png)
+![med_CD14 monocyte_chr16_scatter](figure%20for%20report/Task2B/CMDB_CNV/med_CD14%20monocyte_chr16_scatter.png)
+
 
 ##### 3: Detecting CNVs with high frequency and different size 
 
-![high_B cell_chr9_scatter](figure for report/Task2B/CMDB_CNV/high_B cell_chr9_scatter.png)
+![high_B cell_chr9_scatter](figure%20for%20report/Task2B/CMDB_CNV/high_B%20cell_chr9_scatter.png)
 
-![high_CD4 T cell_chr20_scatter](figure for report/Task2B/CMDB_CNV/high_CD4 T cell_chr20_scatter.png)
+![high_CD4 T cell_chr20_scatter](figure%20for%20report/Task2B/CMDB_CNV/high_CD4%20T%20cell_chr20_scatter.png)
 
-![high_CD14 monocyte_chr22_scatter](figure for report/Task2B/CMDB_CNV/high_CD14 monocyte_chr22_scatter.png)
+![high_CD14 monocyte_chr22_scatter](figure%20for%20report/Task2B/CMDB_CNV/high_CD14%20monocyte_chr22_scatter.png)
+
 
 ### 3. Using inferCNV to detect CNVs
 
@@ -574,33 +581,36 @@ adLow_cnv = run_sample(adLow)
 
 ##### 1: Detecting CNVs with low frequency and different size
 
-![low_1](figure for report/Task2B/inferCNV/low_1.jpg)
+![low_1](figure%20for%20report/Task2B/inferCNV/low_1.jpg)
 
-![low_2](figure for report/Task2B/inferCNV/low_2.jpg)
+![low_2](figure%20for%20report/Task2B/inferCNV/low_2.jpg)
 
-![low_3](figure for report/Task2B/inferCNV/low_3.jpg)
+![low_3](figure%20for%20report/Task2B/inferCNV/low_3.jpg)
 
-![low_4](figure for report/Task2B/inferCNV/low_4.jpg)
+![low_4](figure%20for%20report/Task2B/inferCNV/low_4.jpg)
+
 
 ##### 2: Detecting CNVs with medium frequency and different size
 
-![medium_1](figure for report/Task2B/inferCNV/medium_1.jpg)
+![medium_1](figure%20for%20report/Task2B/inferCNV/medium_1.jpg)
 
-![medium_2](figure for report/Task2B/inferCNV/medium_2.jpg)
+![medium_2](figure%20for%20report/Task2B/inferCNV/medium_2.jpg)
 
-![medium_3](figure for report/Task2B/inferCNV/medium_3.jpg)
+![medium_3](figure%20for%20report/Task2B/inferCNV/medium_3.jpg)
 
-![medium_4](figure for report/Task2B/inferCNV/medium_4.jpg)
+![medium_4](figure%20for%20report/Task2B/inferCNV/medium_4.jpg)
+
 
 ##### 3: Detecting CNVs with high frequency and different size
 
-![high_1](figure for report/Task2B/inferCNV/high_1.jpg)
+![high_1](figure%20for%20report/Task2B/inferCNV/high_1.jpg)
 
-![high_2](figure for report/Task2B/inferCNV/high_2.jpg)
+![high_2](figure%20for%20report/Task2B/inferCNV/high_2.jpg)
 
-![high_3](figure for report/Task2B/inferCNV/high_3.jpg)
+![high_3](figure%20for%20report/Task2B/inferCNV/high_3.jpg)
 
-![high_4](figure for report/Task2B/inferCNV/high_4.jpg)
+![high_4](figure%20for%20report/Task2B/inferCNV/high_4.jpg)
+
 
 ## ⭐️ Task3: Measure CNVs in PSCs
 
@@ -782,7 +792,7 @@ ax2_dict = sc.pl.dotplot(adata_g, marker_genes_dict, 'cell_type', dendrogram=Tru
 plt.show()
 ```
 
-![task3-2D-gastruloids](figure for report/Task3/processing/task3-2D-gastruloids.jpg)
+![task3-2D-gastruloids](figure%20for%20report/Task3/processing/task3-2D-gastruloids.jpg)
 
 #### Dataset 2: ipsc_neurons
 
@@ -824,7 +834,7 @@ sc.pl.umap(adNorm_neurons,color=['cell_type'], alpha=.75, s=10, legend_loc='on d
 plt.show()
 ```
 
-![task3-neurons](figure for report/Task3/processing/task3-neurons.jpg)
+![task3-neurons](figure%20for%20report/Task3/processing/task3-neurons.jpg)
 
 #### Dataset 3:  iPSC-derived cardiomyocytes
 
@@ -868,7 +878,7 @@ ax2_dict = sc.pl.dotplot(adNorm_HSC, marker_genes_dict, 'cell_type', dendrogram=
 plt.show()
 ```
 
-![task3-cadio](figure for report/Task3/processing/task3-cadio.jpg)
+![task3-cadio](figure%20for%20report/Task3/processing/task3-cadio.jpg)
 
 #### Dataset 4：kidney organoids
 
@@ -909,7 +919,7 @@ ax1_dict = sc.pl.umap(adNorm_kidney,color=['cell_type'], alpha=.75, s=10, legend
 plt.show()
 ```
 
-![task3-kidney](figure for report/Task3/processing/task3-kidney.jpg)
+![task3-kidney](figure%20for%20report/Task3/processing/task3-kidney.jpg)
 
 ### Part 2:  Using CMDB_CNV to detect CNVs
 
@@ -1008,9 +1018,9 @@ cnv.pl.chromosome_heatmap(adipsneuron_cnv, groupby=["cell_type"])
 cnv.pl.chromosome_heatmap_summary(adipsneuron_cnv, groupby="cell_type")
 ```
 
-![task3-inferCNV_neurons_1](figure for report/Task3/inferCNV/task3-inferCNV_neurons_1.jpg)
+![task3-inferCNV_neurons_1](figure%20for%20report/Task3/inferCNV/task3-inferCNV_neurons_1.jpg)
 
-![task3-inferCNV_neurons_2](figure for report/Task3/inferCNV/task3-inferCNV_neurons_2.jpg)
+![task3-inferCNV_neurons_2](figure%20for%20report/Task3/inferCNV/task3-inferCNV_neurons_2.jpg)
 
 
 
@@ -1054,9 +1064,10 @@ cnv.pl.chromosome_heatmap_summary(adkidneyorg_cnv, groupby="cell_type")
 
 ---
 
-![task3-inferCNV_kidney](figure for report/Task3/inferCNV/task3-inferCNV_kidney.jpg)
+![task3-inferCNV_kidney](figure%20for%20report/Task3/inferCNV/task3-inferCNV_kidney.jpg)
 
-![task3-inferCNV_kidney_2](figure for report/Task3/inferCNV/task3-inferCNV_kidney_2.jpg)
+![task3-inferCNV_kidney_2](figure%20for%20report/Task3/inferCNV/task3-inferCNV_kidney_2.jpg)
+
 
 #### 3.3 InferCNV with  iPSC-derived cardiomyocytes
 
@@ -1097,7 +1108,6 @@ cnv.pl.chromosome_heatmap_summary(adipscardi_cnv, groupby="cell_type")
 ```
 
 ---
+![task3-inferCNV_cardi_1](figure%20for%20report/Task3/inferCNV/task3-inferCNV_cardi_1.jpg)
 
-![task3-inferCNV_cardi_1](figure for report/Task3/inferCNV/task3-inferCNV_cardi_1.jpg)
-
-![task3-inferCNV_cardi_2](figure for report/Task3/inferCNV/task3-inferCNV_cardi_2.jpg)
+![task3-inferCNV_cardi_2](figure%20for%20report/Task3/inferCNV/task3-inferCNV_cardi_2.jpg)

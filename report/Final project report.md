@@ -968,13 +968,14 @@ CNV.heatmap(kidney)
 
 #### 📊Output 
 
-##### 3.1 CMDB_CNV with 2D-gastruloids
 
-##### 3.2 CMDB_CNV with ips_neurons
+##### 3.1 CMDB_CNV with ips_neurons
+![neurons_S](figure%20for%20report/Task3/CMDB_CNV/neurons_s.jpg)
+![neurons_H](figure%20for%20report/Task3/CMDB_CNV/neurons_h.jpg)
 
-##### 3.3 CMDB_CNV with iPSC-derived cardiomyocytes
-
-##### 3.4 CMDB_CNV with kidney organoids
+##### 3.2 CMDB_CNV with kidney organoids
+![kidney_S](figure%20for%20report/Task3/CMDB_CNV/kidney_S.jpg)
+![kidney_H](figure%20for%20report/Task3/CMDB_CNV/kidney_h.jpg)
 
 ### Part 3 Using inferCNV to detect CNVs for comparizion
 

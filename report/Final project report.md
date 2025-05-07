@@ -53,6 +53,8 @@ To evaluate the performance of our method, we predicted CNAs using benchmark dat
 
 ### Part 1: Detecting CNVs from benchmark data 
 
+#### 💻Code
+
 ```python
 # using CMDB_CNV to analyzing benchmark data 
 import scanpy as sc
@@ -75,6 +77,10 @@ ad_CNV = CNV.mean_norm(ad_CNV) # calculating the mean
 ad_CNV = CNV.neighborhood(ad_CNV,smooth=True,window_length_by_unit=2,unit='hkb') # need this step for heatmap generating 
 CNV.scatter_pl(ad_CNV)   
 ```
+
+#### 📊Output
+
+![pbmc_CD14 monocyte_chr6_scatter](figure%20for%20report/Task2A/CMDB_CNV/pbmc_CD14%20monocyte%20chr22%20scatter.png)
 
 ![pbmc_CD14 monocyte_chr6_scatter](figure for report/Task2A/CMDB_CNV/pbmc_CD14 monocyte_chr6_scatter.png)
 
@@ -150,6 +156,8 @@ CNV.heatmap(adBMNorm_2000)
 
 - 500 reads per cell: 
 
+  
+  
   ![c500_CD14 monocyte_chr6_scatter](figure for report/Task2A/CMDB_CNV/c500_CD14 monocyte_chr6_scatter.png)
 
 

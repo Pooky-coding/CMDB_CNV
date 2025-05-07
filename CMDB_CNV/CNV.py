@@ -11,6 +11,7 @@ from .mean_norm_std import mean_norm_std
 __all__ = [
     "heatmap",
     "mean_norm",
+    "mean_norm_std",
     "neighborhood",
     "pre_processing",
     "scatter_pl",

@@ -85,8 +85,7 @@ CNV.scatter_pl(ad_CNV)
 
 ![pbmc_CD14 monocyte_chr22_scatter](figure%20for%20report/Task2A/CMDB_CNV/pbmc_CD14%20monocyte_chr22_scatter.png)
 
-![pbmc_CD14 monocyte_chr23_scatter](figure%20for%20report/Task2A/CMDB_CNV/pbmc_CD14%20monocyte_chr23_scatter.png)
-
+![pbmc_CD14 monocyte_chr23_scatter](figure%20for%20report/Task2A/CMDB_CNV//pbmc_CD4%20T%20cell_chr23_scatter.png)
 
 ### Part 2: Explor the impact of read depth
 

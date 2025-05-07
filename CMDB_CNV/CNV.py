@@ -6,6 +6,7 @@ from .neighborhood import neighborhood
 from .pre_processing import pre_processing
 from .scatter_pl import scatter_pl
 from .simulate import simulate
+from .mean_norm_std import mean_norm_std
 
 __all__ = [
     "heatmap",

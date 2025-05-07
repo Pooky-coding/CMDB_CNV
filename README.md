@@ -25,7 +25,7 @@ adata = sc.read_h5ad('your h5ad file')
 adata = CNV.simulate()                
 adata = CNV.pre_processing           
 adata = CNV.mean_norm(adata)
-adata = CNV.mean_std_norm(adata)     
+adata = CNV.neighborhood(adata)
 CNV.heatmap(adata)  
 CNV.scatter_pl(adata)    
 ```
@@ -34,40 +34,35 @@ CNV.scatter_pl(adata)
 
 ## 🧬 Functionality
 
-### 🔹 `simulate(`adata,chrom, start, end, cn_state=2, fraction=0.1, cell_type=None, cell_type_column="cell_type", layer="counts", target_obs_col="simulated_cnvs_new"`)`
+### 🔹`simulate(adata, chrom, start, end, cn_state=2, fraction=0.1,cell_type=none,cell_type_column='cell_type',layer='counts',target_obs_col='simulated_cnvs_new')` 
 
 Simulate a copy number alteration (CNA) in a specific genomic region for a fraction of cells in an AnnData object.
 
 **Parameters:**
 
-- `n_cells` (*int*, default=`500`):
-   Number of single cells to simulate.
-
-- `n_genes` (*int*, default=`1000`):
-   Total number of genes. These will be evenly distributed across chromosomes.
-
-- `n_chromosomes` (*int*, default=`22`):
-   Number of chromosomes to simulate. Genes will be assigned to chromosomes in sequence.
-
-- `cell_types` (*list*, default=`["T", "B", "Monocyte"]`):
-   A list of cell type labels to assign to the simulated cells. Cells will be randomly assigned one of these types.
-
-- `noise_std` (*float*, default=`0.1`):
-   Standard deviation of Gaussian noise added to gene expression to simulate measurement variability.
-
-- `cnv_prob` (*float*, default=`0.3`):
-   Probability that a chromosome in a given cell has a copy number alteration (either amplification or deletion).
-
-- `seed` (*int or None*, default=`None`):
-   Random seed for reproducibility. If set, results will be deterministic.
+- `chrom` (*str or int*):
+   The chromosome you want to simulate a CNV.
+- `start` :
+   The start(bp) of the CNV.
+- `end` :
+   The end (bp) of the CNV.
+- `cn_state` (*int*, default=`2`):
+   Integer representing the desired copy number.
+- `fraction` (default=`0.1`):
+   Fraction of eligible cells to apply the CNV to.
+- `cell_type` (default=`'None'`):
+   Restrict simulation to a specific cell type.
+- `cell_type_column` (default=`'cell_type'`):
+   Column in .obs with cell type info.
+- `layer` (default=`'counts'`):
+   name of the layer with counts (or use .X if not found).
+- `target_obs_col` (default=`'simulated_cnvs_new'`):
+   Column name in .obs to record simulated CNVs.
 
 **Returns:**
 
 - `AnnData` object (`anndata.AnnData`):
-   A synthetic single-cell dataset with:
-  - `.X`: Simulated expression matrix (cells × genes)
-  - `.obs`: Cell metadata including `cell_type`
-  - `.var`: Gene metadata including `chromosome`, `start`, and `end` coordinates
+    Modified AnnData object with simulated CNA
 
 
 
@@ -104,40 +99,6 @@ Apply global and cell-type-specific mean normalization. Results are stored in va
   - `.layers['ctype log norm']`: Cell-type mean-centered expression
 
 
-
-------
-
-
-
-### 🔹 `mean_std_norm(adata)`
-
-Performs z-score normalization of gene expression by subtracting the mean and dividing by the standard deviation across all cells for each gene. This method standardizes the expression distribution, making genes comparable regardless of their absolute expression levels.
-
-**Normalization Procedure:**
-
-- Computes the mean and standard deviation for each gene across all cells.
-
-- Applies z-score transformation:
-
-  Z=X−μ/σ
-
-  where μ is the mean and σ\sigmaσ is the standard deviation for each gene.
-
-- The resulting z-score matrix is stored in `adata.layers['zscore']`.
-
-**Parameters:**
-
-- `adata` (*anndata.AnnData*):
-   The input AnnData object. It must contain:
-  - `.X`: Raw or log-transformed gene expression matrix (cells × genes)
-
-**Returns:**
-
-- `AnnData` object (`anndata.AnnData`):
-   Modified `adata` with an added layer:
-  - `.layers['zscore']`: Z-score normalized expression matrix (cells × genes)
-  
-    
 
 ------
 
@@ -279,7 +240,10 @@ Creates a scatter plot showing the expression of a specific gene across differen
 **Notes:**
 
 - This plot is particularly useful for visualizing expression distribution within and across cell types.
+
 - For best results, apply `CNV.mean_std_norm` before using this function to produce the `'zscore'` layer.
+
+  
 
 ---
 
